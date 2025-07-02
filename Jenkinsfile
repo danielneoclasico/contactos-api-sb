@@ -21,10 +21,5 @@ pipeline {
         sh 'docker push danieltl/contactos-api-sb:latest'
       }
     }
-    stage('Crea Azure Container') {
-      steps {
-        sh 'az containerapp up --name contactos-api-sb --image danieltl/contactos-api-sb:latest --resource-group contenedores --environment managedEnvironment-contenedores-a4f5 --ingress external --target-port 8080'
-      }
-    }
   }
 }
