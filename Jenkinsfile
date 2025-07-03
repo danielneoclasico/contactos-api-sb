@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'mvn test'
+        sh '/opt/apache-maven-3.9.10/bin/mvn test'
       }
     }
     stage('Jar') {
       steps {
-        sh 'mvn clean package'
+        sh '/opt/apache-maven-3.9.10/bin/mvn clean package'
       }
     }
     stage('Build') {
