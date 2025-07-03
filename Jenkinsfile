@@ -11,6 +11,11 @@ pipeline {
         sh '/opt/apache-maven-3.9.10/bin/mvn clean package'
       }
     }
+    stage('Docker Login') {
+      steps {
+        sh 'docker login -u danieltl -p "Lehama&73"'
+      }
+    }
     stage('Build') {
       steps {
         sh 'docker build -t danieltl/contactos-api-sb:latest .'
